@@ -1,26 +1,16 @@
-# swift-protocol-review
+### Swift Protocol Review
 
 
-# Closures Review
+![](http://i.imgur.com/SVcsORV.png)
+> You miss 100% of the shots you don't take - Wayne Gretzky - Michael Scott ~[Jim Campagno](https://en.wikipedia.org/wiki/Jim_Campagno)
 
-Open the `ClosureFun.playground` file and solve the problems. We will review them after you've spent some time going through them.
+
+# Protocols Review
 
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/EGYyd"><a href="//imgur.com/EGYyd"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 
 # Material
-
-### Videos
-
-[Intro To Closures](https://youtu.be/bEOtJ1bC0nk) - video
-
-[Closure Expression Syntax](https://youtu.be/JztqpRJ6fsw) - video
-
-[Map - using closures](https://youtu.be/Q3wfJCfxhnw) - video
-
-[Filter & Reduce - using closures](https://youtu.be/ievEyDNq2WU) - video
-
 
 ### Readings
 
