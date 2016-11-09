@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+protocol CalculationTip {
+    func addTipToVc(mealCost: Double)
+}
+
+class ViewController: UITableViewController, CalculationTip {
 
     
     
@@ -18,26 +22,38 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tipArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
-        
+        cell.textLabel?.text = String(self.tipArray[indexPath.row])
         return cell
         
     }
     
     func calcAllTips() -> Double{
-        return 0.0
+        return tipArray.reduce(0, +)
     }
-
+    
+    func addTipToVc(mealCost: Double) {
+        let newTip = 0.15*mealCost
+        self.tipArray.append(newTip)
+    }
    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "tipSegue" {
+            let dist = segue.destination as! AddTipViewController
+            dist.addTip = self
+        }
+    }
+    
+    
     @IBAction func calculateAllTips(_ sender: Any) {
         
-        
+        self.tableView.reloadData()
         
         
         

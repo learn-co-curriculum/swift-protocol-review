@@ -11,7 +11,7 @@ import UIKit
 class AddTipViewController: UIViewController {
 
     @IBOutlet weak var tipTextField: UITextField!
-    
+    var addTip: CalculationTip?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,9 @@ class AddTipViewController: UIViewController {
 
     
     @IBAction func addTipBtnPressed(_ sender: Any) {
+        let mealCost = Double(self.tipTextField.text!)
+        self.addTip?.addTipToVc(mealCost: mealCost!)
+        dismiss(animated: true, completion: nil)
         // get tipValueFromTextField 
         // make sure its a Double
         //calc tip at 15%
