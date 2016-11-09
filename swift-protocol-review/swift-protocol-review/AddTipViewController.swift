@@ -7,10 +7,17 @@
 //
 
 import UIKit
+protocol CalculationTipManager{
+    func addTipToVC(tip:Double)
+    
+}
 
 class AddTipViewController: UIViewController {
 
     @IBOutlet weak var tipTextField: UITextField!
+    
+    var delegate: CalculationTipManager?
+    
     
     
     override func viewDidLoad() {
@@ -21,10 +28,16 @@ class AddTipViewController: UIViewController {
 
     
     @IBAction func addTipBtnPressed(_ sender: Any) {
-        // get tipValueFromTextField 
-        // make sure its a Double
-        //calc tip at 15%
-        // pass back to the first view controller
+        
+        var tipString = self.tipTextField.text
+        guard let unwrappedtipString = tipString else { return }
+        var tipValue = Double(unwrappedtipString)
+        guard let unwrappedTipValue = tipValue else { return }
+        var calculatedTip = unwrappedTipValue * 0.20
+        delegate?.addTipToVC(tip: calculatedTip)
+        self.navigationController?.popViewController(animated: true)
+        
+        
     }
 
    

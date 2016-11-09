@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  swift-protocol-review
+//  protocolTest
 //
 //  Created by Johann Kerr on 11/8/16.
 //  Copyright © 2016 Johann Kerr. All rights reserved.
 //
 
 import UIKit
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
